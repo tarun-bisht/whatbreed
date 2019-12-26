@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+    <meta name="description" content="Check Breed of different animals">
+    <meta name="author" content="Tarun Bisht">
+    {% if title %}
+      <title>whatbreed | {{ title }}</title>
+    {% else %}
+      <title>whatbreed |</title>
+    {% endif %}
+    <link defer href="{{ url_for('static',filename='css/loader.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/css/bootstrap.min.css" defer>
+    <link defer href="{{ url_for('static',filename='css/app.css') }}" rel="stylesheet" />
+    <link async rel="icon" async href="{{ url_for('static',filename='images/favicon.ico') }}">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+      <h3><a class="navbar-brand" href="{{ url_for('index') }}">WHATBREED</a></h3>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link white" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link white" href="{{ url_for('about') }}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link white" href="https://tarunbisht.herokuapp.com">Website</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link white" href="https://tarunbisht.herokuapp.com/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navigation Ends -->
+
+    <!-- Content -->
+    {% block content %}{% endblock %}
+    <!-- Content Ends -->
+
+    <!-- Footer -->
+    <footer class="mt-5">
+      
+    </footer>
+    <!-- Footer Ends -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script defer src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/bootstrap.min.js"></script>
+    <script defer src="{{ url_for('static',filename='js/app.js') }}"></script>
+    <script async src="{{ url_for('static',filename='js/breeds.js') }}"></script>
+    <script defer src="{{ url_for('static',filename='js/predict.js') }}"></script>
+  </body>
+</html>
